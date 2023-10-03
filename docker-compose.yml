@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  website-to-pdf-converter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    restart: always

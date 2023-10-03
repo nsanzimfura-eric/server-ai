@@ -1,0 +1,10 @@
+# Ignore Node.js modules and dependencies
+node_modules/
+
+# Ignore development and build files
+.git/
+.vscode/
+.env
+*.log
+build
+npm-debug.log
