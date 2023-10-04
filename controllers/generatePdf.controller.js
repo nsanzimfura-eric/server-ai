@@ -5,7 +5,7 @@ const generatePdfControler = async (req, res) => {
     const pdf = await convertWebsiteToPDF();
     res.set({
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename=market_insights${new Date().getTime()}.pdf`,
+      "Content-Disposition": `attachment; filename=market_insights.pdf`,
     });
     res.send(pdf);
   } catch (error) {
