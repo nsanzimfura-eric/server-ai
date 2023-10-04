@@ -11,10 +11,12 @@ const convertWebsiteToPDF = async (url) => {
     waitUntil: "networkidle0",
   });
   // await page.waitForSelector("img");
-  const btns = document.getElementById("homePage");
-  const select = document.getElementById("select");
-  btns && btns.remove();
-  select && select.remove();
+  await page.evaluate(() => {
+    const btns = document.getElementById("homePage");
+    const select = document.getElementById("select");
+    btns && btns.remove();
+    select && select.remove();
+  });
 
   const pdf = await page.pdf({
     format: "A4",
