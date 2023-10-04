@@ -1,14 +1,13 @@
 const puppeteer = require("puppeteer");
-const { hostname } = require("../constants/constants");
 
-const convertWebsiteToPDF = async () => {
+const convertWebsiteToPDF = async (url) => {
   const browser = await puppeteer.launch({
     headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
   const page = await browser.newPage();
-  await page.goto(hostname, {
+  await page.goto(url, {
     waitUntil: "networkidle2",
   });
   // await page.waitForSelector("img");

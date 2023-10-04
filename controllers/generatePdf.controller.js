@@ -1,8 +1,9 @@
 const convertWebsiteToPDF = require("../services/convertToPdf.service");
 
 const generatePdfControler = async (req, res) => {
+  const { url } = req.query;
   try {
-    const pdf = await convertWebsiteToPDF();
+    const pdf = await convertWebsiteToPDF(url);
     res.set({
       "Content-Type": "application/pdf",
       "Content-Disposition": `attachment; filename=market_insights.pdf`,
