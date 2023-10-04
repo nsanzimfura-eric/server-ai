@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => res.send("Welcome to RealAssist.ai"));
-app.use("/", router);
+app.use("/api", router);
 
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
