@@ -8,9 +8,13 @@ const convertWebsiteToPDF = async (url) => {
 
   const page = await browser.newPage();
   await page.goto(url, {
-    waitUntil: "networkidle2",
+    waitUntil: "networkidle0",
   });
   // await page.waitForSelector("img");
+  const btns = document.getElementById("homePage");
+  const select = document.getElementById("select");
+  btns && btns.remove();
+  select && select.remove();
 
   const pdf = await page.pdf({
     format: "A4",
