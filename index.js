@@ -13,11 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) =>
-  res.send(
-    "Welcome to RealAssist.ai, head to /actions/generate-pdf to get your pdf"
-  )
-);
+app.get("/", (req, res) => res.send("Welcome to RealAssist.ai"));
 app.use("/", router);
 
 app.listen(3001, () => {
